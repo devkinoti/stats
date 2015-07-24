@@ -36,13 +36,14 @@ class Data
 		return true
 	end
 
-	def self.saved_data
+	def self.environment_data
 		#read data
 		data = []
 		if file_usable?
 			file = File.new(@@filepath,'r')
 			file.each_line do |line|
-				data << Data.new.import_line(line.chomp)
+				#data << Data.new.import_line(line.chomp)
+				#adding up the data from the txt for mean and median
 			file.close
 		end
 	end
@@ -50,7 +51,7 @@ class Data
 
 
 	def import_line(line)
-		line_array = line.split("\t")
+		#tabbing for the txt
 
 	end
 end
